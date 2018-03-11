@@ -1,12 +1,14 @@
 document.body.onload = function () {
 
-    Net.setDefaultAccount();
+    Net.init();
 
     document.querySelector('#create-car-form').addEventListener('submit', function (event) {
         event.preventDefault();
         var form = event.target;
         var vin = form.elements.vin.value;
-        Net.contract.createCar(vin);
+        Net.contract.createCar(vin, function (error, result) {
+            alert(result);
+        });
     });
 
     document.querySelector('#update-car-form').addEventListener('submit', function (event) {
@@ -14,16 +16,30 @@ document.body.onload = function () {
         var form = event.target;
         var vin = form.elements.vin.value;
         var km = form.elements.km.value;
-        Net.contract.updateKilometers(vin, km);
+        Net.contract.updateKilometers(vin, km, function (error, result) {
+            alert(result);
+        });
+    });
+
+    document.querySelector('#transfer-car-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var form = event.target;
+        var vin = form.elements.vin.value;
+        
+        var owner = form.elements.owner.value;
+        var km = form.elements.km.value;
+        Net.contract.transferOwnership(vin, owner, km, function (error, result) {
+            alert(result);
+        });
     });
 
     document.querySelector('#fetch-car-form').addEventListener('submit', function (event) {
         event.preventDefault();
         var form = event.target;
         var vin = form.elements.vin.value;
-        var car = Net.contract.getCar(vin);
 
-        document.querySelector('#car-result-vin').innerHTML = car[0];
-        document.querySelector('#car-result-kilometers').innerHTML = car[1];
+        Net.contract.getCar(vin, UI.updateCarDetail);
+
+
     });
 };
