@@ -1,0 +1,162 @@
+body {
+    background-color: #333;
+    color: #009999;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+h1 {
+ margin: 0px;
+ margin-bottom: 24px;
+}
+
+div#main-menu li{
+    display: inline-block;
+    float: left;
+    font-size: 1.4em;
+    list-style: none;
+    margin-right: 24px;
+}
+
+div#main-menu li a {
+    text-decoration: none;
+    color: #009999;
+}
+
+div#main-menu {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.panel {
+    height: 200px;
+    width: 600px;
+    font-size: 16px;
+    background: #555;
+    border: 5px solid #009999;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 24px;
+}
+
+.panel.hidden {
+    display: none;
+}
+
+label {
+    display: inline-block; 
+    float: left;
+    clear: both;
+    margin-right: 12px;
+    height: 30px;
+    padding: 0px;
+    width: 50px;
+    vertical-align: bottom;
+}
+
+input, select { 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;     
+
+    display: block;
+    float: none;
+    background-color: #555;
+    border: none;
+    color: #009999;
+    border-bottom: 1px dashed #009999;
+    height: 30px;
+    width: 320px;
+}
+
+button {
+    display: block;
+    margin-top: 1em;
+    border: 1px solid #009999;
+    background-color: #555;
+    color: #009999;
+    width: 320px;
+    height: 3em;
+}
+
+button:hover {
+    margin-top: 1em;
+    border: 1px solid #009999;
+    background-color: #009999;
+    color: #555;
+    width: 30em;
+    height: 3em;
+}
+
+button:disabled {
+    margin-top: 1em;
+    border: 1px solid #333;
+    background-color: #555;
+    color: #333;
+    width: 30em;
+    height: 3em;
+}
+
+div.transaction svg {
+    margin-left: 10px;
+    font-size: 2em;
+}
+
+div.transaction.waiting-transaction {
+    border-color: #666;
+    background-color: #999;
+    color: #666;
+}
+
+div.transaction.pending-transaction {
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.1;
+}
+
+div.transaction.complete-transaction {
+    border-color: #009999;
+    -webkit-animation: shake 1s ease-out;
+    -webkit-animation-iteration-count: 1; 
+}
+
+div.transaction.error-transaction {
+    color: red;
+    border-color: red;
+    -webkit-animation: shake 1s ease-out;
+    -webkit-animation-iteration-count: 1; 
+}
+
+@keyframes pulsate {
+    0% { 
+        opacity: 0.3;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.3;
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

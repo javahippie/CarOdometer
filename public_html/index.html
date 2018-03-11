@@ -8,16 +8,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
     </head>
+
     <body>
-        <h1>Create a Car</h1>
-        <form id="create-car-form">
+
+        <div id="main-menu">
+            <ul>
+                <li><a href="#" onclick="UI.navigate('create-car-form')">Create car</a></li>
+                <li><a href="#" onclick="UI.navigate('update-car-form')">Update Km</a></li>
+                <li><a href="#" onclick="UI.navigate('transfer-car-form')">Transfer car</a></li>
+                <li><a href="#" onclick="UI.navigate('fetch-car-form')">Fetch car</a></li>
+            </ul>
+        </div>
+
+        <form id="create-car-form" class="panel">
+            <h1>Create a Car</h1>
             <label for="create-car-vin">VIN</label>
             <input id="create-car-vin" name="vin" type="text"/>
             <button id="create-car-submit" type="submit">Start</button>
         </form>
 
-        <h1>Update kilometers of a Car</h1>
-        <form id="update-car-form">
+        <form id="update-car-form" class="panel hidden">
+            <h1>Update kilometers of a Car</h1>
             <label for="update-car-vin">VIN</label>
             <input id="update-car-vin" name="vin" type="text"/>
             <label for="update-car-km">KM</label>
@@ -25,8 +36,9 @@
             <button id="update-car-submit" type="submit">Start</button>
         </form>
 
-        <h1>Transfer ownership of a Car</h1>
-        <form id="transfer-car-form">
+
+        <form id="transfer-car-form" class="panel hidden">
+            <h1>Transfer ownership of a Car</h1>
             <label for="transfer-car-vin">VIN</label>
             <input id="transfer-car-vin" name="vin" type="text"/>
             <label for="transfer-car-owner">Owner</label>
@@ -36,22 +48,22 @@
             <button id="transfer-car-submit" type="submit">Start</button>
         </form>
 
-        <h1>Fetch a Car</h1>
-        <form id="fetch-car-form">
+        <form id="fetch-car-form" class="panel hidden">
+            <h1>Fetch a Car</h1>
+
             <label for="fetch-car-vin">VIN</label>
             <input id="fetch-car-vin" name="vin" type="text"/>
 
+            <label id="car-result-vin-label" for="car-result-vin">Owner</label>
+            <input type="text" disabled id="car-result-vin"/>
+
+            <label id="car-result-kilometers-label" for="car-result-kilometers">KM</label>
+            <input type="text" disabled id="car-result-kilometers"/>
+
             <button id="fetch-car-submit" type="submit">Start</button>
+
+
         </form>
-
-        <div id="car-results">
-            <label id="car-result-vin-label" for="car-result-vin">Besitzer</label>
-            <label id="car-result-vin"></label>
-            <label id="car-result-kilometers-label" for="car-result-kilometers">Kilometer</label>
-            <label id="car-result-kilometers"></label>
-        </div>
-
-
 
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
