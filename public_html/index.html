@@ -9,12 +9,42 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Create a Car</h1>
+        <form id="create-car-form">
+            <label for="create-car-vin">VIN</label>
+            <input id="create-car-vin" name="vin" type="text"/>
+            <button id="create-car-submit" type="submit">Start</button>
+        </form>
+
+        <h1>Update kilometers a Car</h1>
+        <form id="update-car-form">
+            <label for="update-car-vin">VIN</label>
+            <input id="update-car-vin" name="vin" type="text"/>
+            <label for="update-car-km">KM</label>
+            <input id="update-car-km" name="km" type="text"/>
+            <button id="update-car-submit" type="submit">Start</button>
+        </form>
+
+        <h1>Fetch a Car</h1>
+        <form id="fetch-car-form">
+            <label for="fetch-car-vin">VIN</label>
+            <input id="fetch-car-vin" name="vin" type="text"/>
+
+            <button id="fetch-car-submit" type="submit">Start</button>
+        </form>
+
+        <div id="car-results">
+            <label id="car-result-vin-label" for="car-result-vin">Besitzer</label>
+            <label id="car-result-vin"></label>
+            <label id="car-result-kilometers-label" for="car-result-kilometers">Kilometer</label>
+            <label id="car-result-kilometers"></label>
+        </div>
 
 
 
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+        <script src="js/contract.js"></script>
         <script src="js/net.js"></script>
         <script src="js/ui.js"></script>
         <script src="js/main.js"></script>
