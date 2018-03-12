@@ -57,7 +57,7 @@ contract Odometer {
     function transferOwnership(string vin, address owner, uint kilometers) public {
         Car storage transferObject = cars[vin];
         assert(transferObject.owner == msg.sender); 
-        assert(transferObject.kilometers > kilometers);
+        assert(transferObject.kilometers < kilometers);
         transferObject.owner = owner;
         transferObject.kilometers = kilometers;
         emit Transfer(msg.sender, owner, vin);

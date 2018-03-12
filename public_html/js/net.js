@@ -2,6 +2,8 @@ var Net = {};
 
 Net.contract = null; // Initialized in init.
 
+
+
 Net.init = function () {
     if (typeof web3 !== 'undefined') {
         // is web3 already provided by the Mist browser?
@@ -13,22 +15,17 @@ Net.init = function () {
 
     Net.web3.eth.defaultAccount = Net.web3.eth.coinbase;
     Net.contract = Net.web3.eth.contract(Contract.abi).at(Contract.address);
-};
 
-Net.sendTransaction = function (request, callback) {
-    Net.web3.eth.sendTransaction(request, function (error, response) {
-        Net.web3.eth.getTransaction(response, function (error, tx) {
-            callback(error, tx);
+    Net.latestFilter = Net.web3.eth.filter('latest');
+
+    Net.latestFilter.watch(function (error, blockHash) {
+        Net.web3.eth.getBlock(blockHash).transactions.forEach(function(tx){
+            var status = Net.web3.eth.getTransactionReceipt(tx).status;
+            if(status == '0x0') {
+                UI.setLogEntryError(tx);
+            } else if(status == '0x1') {
+                UI.setLogEntryComplete(tx);
+            }
         });
-    });
-};
-
-Net.queryAccounts = function (err, callback) {
-    Net.web3.eth.getAccounts(function (error, accounts) {
-        if (!error) {
-            accounts.forEach(callback);
-        } else {
-            err();
-        }
     });
 };

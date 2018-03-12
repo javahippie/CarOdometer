@@ -1,14 +1,14 @@
 body {
     background-color: #333;
-    color: #009999;
+    color: white;
     margin: 0px;
     padding: 0px;
-    font-family: sans-serif;
+    font-family: monospace;
 }
 
 h1 {
- margin: 0px;
- margin-bottom: 24px;
+    margin: 0px;
+    margin-bottom: 24px;
 }
 
 div#main-menu li{
@@ -21,7 +21,7 @@ div#main-menu li{
 
 div#main-menu li a {
     text-decoration: none;
-    color: #009999;
+    color: white;
 }
 
 div#main-menu {
@@ -34,7 +34,7 @@ div#main-menu {
     width: 600px;
     font-size: 16px;
     background: #555;
-    border: 5px solid #009999;
+    border: 5px solid white;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
@@ -45,6 +45,12 @@ div#main-menu {
 
 .panel.hidden {
     display: none;
+}
+
+.log-panel {
+    font-size: 2em;
+    text-align: center; 
+    width: 100%;
 }
 
 label {
@@ -67,8 +73,8 @@ input, select {
     float: none;
     background-color: #555;
     border: none;
-    color: #009999;
-    border-bottom: 1px dashed #009999;
+    color: white;
+    border-bottom: 1px dashed white;
     height: 30px;
     width: 320px;
 }
@@ -76,17 +82,17 @@ input, select {
 button {
     display: block;
     margin-top: 1em;
-    border: 1px solid #009999;
+    border: 1px solid white;
     background-color: #555;
-    color: #009999;
+    color: white;
     width: 320px;
     height: 3em;
 }
 
 button:hover {
     margin-top: 1em;
-    border: 1px solid #009999;
-    background-color: #009999;
+    border: 1px solid white;
+    background-color: white;
     color: #555;
     width: 30em;
     height: 3em;
