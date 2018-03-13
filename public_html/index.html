@@ -11,6 +11,8 @@
 
     <body>
 
+        <h1>Ethereum Car Registration</h1>
+
         <div id="main-menu">
             <ul>
                 <li><a href="#" onclick="UI.navigate('create-car-panel')">Create car</a></li>
@@ -22,20 +24,26 @@
 
         <div id="create-car-panel" class="panel">
             <form id="create-car-form">
-                <h1>Create a Car</h1>
-                <label for="create-car-vin">VIN</label>
-                <input id="create-car-vin" name="vin" type="text"/>
+                <h2>Create a Car</h2>
+                <div class="form-wrapper">
+                    <label for="create-car-vin">VIN</label>
+                    <input id="create-car-vin" name="vin" type="text"/>
+                </div>
                 <button id="create-car-submit" type="submit">Start</button>
             </form>
         </div>
 
         <div id="update-car-panel" class="panel hidden">
             <form id="update-car-form">
-                <h1>Update kilometers of a Car</h1>
-                <label for="update-car-vin">VIN</label>
-                <input id="update-car-vin" name="vin" type="text"/>
-                <label for="update-car-km">KM</label>
-                <input id="update-car-km" name="km" type="text"/>
+                <h2>Update kilometers of a Car</h2>
+                <div class="form-wrapper">
+                    <label for="update-car-vin">VIN</label>
+                    <input id="update-car-vin" name="vin" type="text"/>
+                </div>
+                <div class="form-wrapper">
+                    <label for="update-car-km">KM</label>
+                    <input id="update-car-km" name="km" type="text"/>
+                </div>
                 <button id="update-car-submit" type="submit">Start</button>
             </form>
         </div>
@@ -43,36 +51,42 @@
 
         <div id="transfer-car-panel" class="panel hidden">
             <form id="transfer-car-form">
-                <h1>Transfer ownership of a Car</h1>
-                <label for="transfer-car-vin">VIN</label>
-                <input id="transfer-car-vin" name="vin" type="text"/>
-                <label for="transfer-car-owner">Owner</label>
-                <input id="transfer-car-owner" name="owner" type="text"/>
-                <label for="transfer-car-km">KM</label>
-                <input id="transfer-car-km" name="km" type="text"/>
+                <h2>Transfer ownership of a Car</h2>
+                <div class="form-wrapper">
+                    <label for="transfer-car-vin">VIN</label>
+                    <input id="transfer-car-vin" name="vin" type="text"/>
+                </div>
+                <div class="form-wrapper">
+                    <label for="transfer-car-owner">Owner</label>
+                    <input id="transfer-car-owner" name="owner" type="text"/>
+                </div>
+                <div class="form-wrapper">
+                    <label for="transfer-car-km">KM</label>
+                    <input id="transfer-car-km" name="km" type="text"/>
+                </div>
                 <button id="transfer-car-submit" type="submit">Start</button>
             </form>
         </div>
 
         <div id="fetch-car-panel" class="panel hidden">
             <form id="fetch-car-form">
-                <h1>Fetch a Car</h1>
-
-                <label for="fetch-car-vin">VIN</label>
-                <input id="fetch-car-vin" name="vin" type="text"/>
-
-                <label id="car-result-vin-label" for="car-result-vin">Owner</label>
-                <input type="text" disabled id="car-result-vin"/>
-
-                <label id="car-result-kilometers-label" for="car-result-kilometers">KM</label>
-                <input type="text" disabled id="car-result-kilometers"/>
-
+                <h2>Fetch a Car</h2>
+                <div class="form-wrapper">
+                    <label for="fetch-car-vin">VIN</label>
+                    <input id="fetch-car-vin" name="vin" type="text"/>
+                </div><div class="form-wrapper">
+                    <label id="car-result-vin-label" for="car-result-vin">Owner</label>
+                    <input type="text" disabled id="car-result-vin"/>
+                </div><div class="form-wrapper">
+                    <label id="car-result-kilometers-label" for="car-result-kilometers">KM</label>
+                    <input type="text" disabled id="car-result-kilometers"/>
+                </div>
                 <button id="fetch-car-submit" type="submit">Start</button>
             </form>
         </div>
-        
+
         <div class="log-panel">
-            
+
         </div>
 
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
