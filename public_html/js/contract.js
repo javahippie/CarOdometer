@@ -1,6 +1,6 @@
 var Contract = {};
 
-Contract.address = "0x533cB0495456fAa823467246EDD98Cda91A55014";
+Contract.address = "0xb4b0b42b639176961556073455d00d49cff6a199";
 
 Contract.abi = [
     {
