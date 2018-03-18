@@ -1,7 +1,11 @@
 var Contract = {};
 
-Contract.address = "0xb4b0b42b639176961556073455d00d49cff6a199";
+Contract.address = "0xa75175cd4445F34eA56f705BF3c45c0eEEE2E762";
 
+
+/**
+ * This is statically generated. Hands off!
+ */
 Contract.abi = [
     {
         "constant": false,
