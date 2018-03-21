@@ -1,6 +1,129 @@
 var Contract = {};
-        Contract.address = "0x1f77A6BDfdcdfE4e844B0D48DaF1C9aCcE3EBA8E";
+        Contract.address = "0xb05dF5D936A35b09CA895bcAef9064cEd7B80418";
         /**
          * This is statically generated. Hands off!
          */
-        Contract.abi = [{"constant":false, "inputs":[{"name":"vin", "type":"string"}, {"name":"kilometers", "type":"uint256"}], "name":"updateKilometers", "outputs":[], "payable":false, "sta    teMutability":"nonpayable", "type":"function"}, {"constant":true, "inputs":[{"name":"vin", "type":"string"}], "name":"getCar", "outputs":[{"name":"_owner", "type":"ad    dress"}, {"name":"_kilometers", "type":"uint256"}], "payable":false, "stateMutability":"view", "type":"function"}, {"constant":false, "inputs":[{"name":"vin", "type":"    string"}, {"name":"owner", "type":"address"}, {"name":"kilometers", "type":"uint256"}], "name":"transferOwnership", "outputs":[], "payable":false, "stateMutability":"n    onpayable", "type":"function"}, {"constant":false, "inputs":[{"name":"vin", "type":"string"}], "name":"createCar", "outputs":[], "payable":false, "stateMutability":"no    npayable", "type":"function"}, {"inputs":[], "payable":false, "stateMutability":"nonpayable", "type":"constructor"}, {"anonymous":false, "inputs":[{"indexed":true, "na    me":"_from", "type":"address"}, {"indexed":false, "name":"vin", "type":"string"}], "name":"Creation", "type":"event"}, {"anonymous":false, "inputs":[{"indexed":true, "n    ame":"_from", "type":"address"}, {"indexed":true, "name":"_to", "type":"address"}, {"indexed":false, "name":"vin", "type":"string"}], "name":"Transfer", "type":"event"}    ]
+        Contract.abi = [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "vin",
+				"type": "string"
+			}
+		],
+		"name": "createCar",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "vin",
+				"type": "string"
+			},
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "kilometers",
+				"type": "uint256"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "vin",
+				"type": "string"
+			},
+			{
+				"name": "kilometers",
+				"type": "uint256"
+			}
+		],
+		"name": "updateKilometers",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "vin",
+				"type": "string"
+			}
+		],
+		"name": "Creation",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "vin",
+				"type": "string"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "vin",
+				"type": "string"
+			}
+		],
+		"name": "getCar",
+		"outputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "kilometers",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
